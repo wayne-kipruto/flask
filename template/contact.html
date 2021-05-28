@@ -1,0 +1,38 @@
+ {%extends 'root.html'%} {%block head%}
+
+<link rel="stylesheet" href=css/styles.css>
+
+<nav class="mynav">
+    <ul class="mynav_ls">
+        <li class="mynav_item"> <a href="index.html" class="mynav_link">Home</a></li>
+        <li class="mynav_item"> <a href="index.html#skills" class="mynav_link">Creative Styles</a></li>
+        <li class="mynav_item"> <a href="index.html#about" class="mynav_link">About Me</a></li>
+        <li class="mynav_item"> <a href="index.html#projects" class="mynav_link">Art Projects</a></li>
+    </ul>
+</nav>
+
+{%endblock%} {%block body%}
+<form>
+    Firstname:<input type="text" name="Firstname"><br> Lastname: <input type="text" name="Lastname"><br> Email: <input type="email" name="Email"><br> Message:
+    <input type="text" name="Message"><br> Submit:
+    <input type="submit" value="Submit"> { % for i in entries %} {{ i.content }} {{ i.date_added.date() }}
+</form>
+<!--page footer-->
+<footer class="footer">
+    <script src="{{ url_for('static', filename = 'js/index.js') }}"></script>
+    <!--insert your own here-->
+    <a href="mailto:tanniasashag@gmail.com" class="footer_link">tanniasashag@gmail.com</a>
+
+    <ul class="social_links">
+        <li class="socialitem">
+            <a class="socialitemlink" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="socialitem">
+            <a class="socialitemlink" href="https://facebook.com"><i class="fab fa-facebook-square"></i></a>
+        </li>
+        <li class="socialitem">
+            <a class="socialitemlink:" href="https://instagram.com"><i class="fab fa-instagram-square"></i></a>
+        </li>
+    </ul>
+</footer>
+{%endblock%}
